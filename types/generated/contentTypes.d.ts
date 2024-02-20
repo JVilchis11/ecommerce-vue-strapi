@@ -842,13 +842,14 @@ export interface ApiProductProduct extends Schema.CollectionType {
     singularName: 'product';
     pluralName: 'products';
     displayName: 'Product';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     name: Attribute.String & Attribute.Required;
-    image: Attribute.Media & Attribute.Required;
+    image: Attribute.Media;
     price: Attribute.Decimal & Attribute.Required;
     category: Attribute.Relation<
       'api::product.product',
